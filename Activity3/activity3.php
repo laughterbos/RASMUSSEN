@@ -42,7 +42,7 @@
             die("Connection failed: " . mysqli_connect_error());
             }
 
-            $sql= "SELECT CONCAT(module3table1.Fname,' ',module3table1.Lname) As 'Name', module3table2.Address, module3table2.City, module3table2.State, module3table2.Country, module3table2.zip FROM Module3table1 LEFT JOIN module3table2 ON module3table1.departmentID = module3table2.id WHERE module3table1.id = '$id'";
+            $sql= "SELECT CONCAT(module3table1.Fname,' ',module3table1.Lname) As 'Name', module3table2.Address, module3table2.City, module3table2.State, module3table2.Country, module3table2.Zip FROM Module3table1 LEFT JOIN module3table2 ON module3table1.departmentID = module3table2.id WHERE module3table1.id = '$id'";
             $result = mysqli_query($conn, $sql);
 
             if (mysqli_num_rows($result) > 0) {
@@ -53,7 +53,7 @@
 	    echo "<b>Work City: " . $row["City"]. "</b><br>";
 	    echo "<b>Work State: " . $row["State"]. "</b><br>";
 	    echo "<b>Work Country: " . $row["Country"]. "</b><br>";
-	    echo "<b>Work Zip: " . $row["zip"]. "</b><br>";
+	    echo "<b>Work Zip: " . $row["Zip"]. "</b><br>";
             }
             } else {
             echo "Sorry there are no matches! Please check your entry and try again.";
