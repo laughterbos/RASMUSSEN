@@ -35,7 +35,7 @@
 
             $StartDate = (isset($_POST['Start Date'])    ? $_POST['Start Date']   : '');
             $EndDate = (isset($_POST['End Date'])    ? $_POST['End Date']   : '');
-            $UserID = (isset($_POST['User ID'])    ? $_POST['User ID']   : '');
+            $UserID = (isset($_POST['ID'])    ? $_POST['ID']   : '');
 
             // Create connection
             $conn = mysqli_connect($servername, $username, $password, $dbname);
