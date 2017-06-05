@@ -42,7 +42,7 @@
             die("Connection failed: " . mysqli_connect_error());
             }
 
-            $sql= "SELECT A.Fname + ' ' + A.Lname As 'Name', B.Address, B.City, B.State, B.Country, B.zip FROM 'Module3table1' A left join 'module3table2' B on A.departmentID = B.id WHERE A.id = '$id'";
+            $sql= "SELECT module3table1.Fname + ' ' + module3table1.Lname As 'Name', module3table2.Address, module3table2.City, module3table2.State, module3table2.Country, module3table2.zip FROM Module3table1 LEFT JOIN module3table2 ON module3table1.departmentID = module3table2.id WHERE module3table1.id = '$id'";
             $result = mysqli_query($conn, $sql);
 
             if (mysqli_num_rows($result) > 0) {
