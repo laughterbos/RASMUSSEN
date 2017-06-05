@@ -53,7 +53,7 @@
 	    echo "<b>Work City: " . $row["City"]. "</b><br>";
 	    echo "<b>Work State: " . $row["State"]. "</b><br>";
 	    echo "<b>Work Country: " . $row["Country"]. "</b><br>";
-	    echo "<b>Work Zip: " . $row["Zip"]. "</b><br>";
+	    echo "<b>Work Zip: " . $row["zip"]. "</b><br>";
             }
             } else {
             echo "Sorry there are no matches! Please check your entry and try again.";
