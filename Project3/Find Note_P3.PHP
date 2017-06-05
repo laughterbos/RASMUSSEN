@@ -44,7 +44,7 @@
             die("Connection failed: " . mysqli_connect_error());
             }
 
-            $sql= "SELECT Notes.Text, AdditionalData.Value FROM Notes Left Join AdditionalData on Notes.User = AdditionalData.userid WHERE $StartDate <= Notes.Date and Notes.Date <= $EndDate";
+            $sql= "SELECT Notes.Text, AdditionalData.Value FROM Notes Left Join AdditionalData on Notes.User = AdditionalData.userid WHERE '$StartDate' <= Notes.Date and Notes.Date <= '$EndDate' and notes.User = '$UserID'";
             $result = mysqli_query($conn, $sql);
 
             if (mysqli_num_rows($result) > 0) {
@@ -52,8 +52,8 @@
             while($row = mysqli_fetch_assoc($result)) {
             echo "<b>Date: " . $row["Date"]. "</b><br>";
             echo "<b>Note: " . $row["Text"]. "</b><br>";
-			echo "<b>Note: " . $row["Value"]. "</b><br>";
-			echo "<hr>";"
+	    echo "<b>Note: " . $row["Value"]. "</b><br>";
+	    echo "<hr>";"
             }
             } else {
             echo "Sorry there are no matches! Please check your entry and try again.";
