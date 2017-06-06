@@ -32,9 +32,13 @@
             $username = "b13fe870529434";
             $password = "b3092936";
             $dbname = "acsm_9ab42719d04fd9b";
-            $StartDate = (isset($_POST['Start Date'])    ? $_POST['Start Date']   : '');
-            $EndDate = (isset($_POST['End Date'])    ? $_POST['End Date']   : '');
+            $StartDate = DateTime::CreateFromFormat('m/d/y',(isset($_POST['Start Date'])    ? $_POST['Start Date']   : ''));
+            $EndDate = DateTime::CreateFromFormat('m/d/y',(isset($_POST['End Date'])    ? $_POST['End Date']   : ''));
             $UserID = (isset($_POST['User ID'])    ? $_POST['User ID']   : '');
+            
+            $StartDate = $StartDate->Format("Y-m-d");
+            $EndDate = $EndDate->Format("Y-m-d");
+            
             // Create connection
             $conn = mysqli_connect($servername, $username, $password, $dbname);
             // Check connection
