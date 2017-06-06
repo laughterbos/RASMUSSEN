@@ -35,14 +35,13 @@
             $StartDate = (isset($_POST['Start Date'])    ? $_POST['Start Date']   : '');
             $EndDate = (isset($_POST['End Date'])    ? $_POST['End Date']   : '');
             $UserID = (isset($_POST['User ID'])    ? $_POST['User ID']   : '');
-            
             // Create connection
             $conn = mysqli_connect($servername, $username, $password, $dbname);
             // Check connection
             if (!$conn) {
             die("Connection failed: " . mysqli_connect_error());
             }
-            $sql= "SELECT * FROM `Notes` LEFT JOIN `additionaldata` on `Notes`.User = `additionaldata`.userid WHERE `Notes`.User = '$UserID';
+            $sql= "SELECT * FROM `Notes` WHERE $StartDate <= Date and Date <= $EndDate";
             $result = mysqli_query($conn, $sql);
             if (mysqli_num_rows($result) > 0) {
             // output data of each row
