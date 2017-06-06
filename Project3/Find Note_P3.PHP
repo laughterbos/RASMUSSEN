@@ -33,8 +33,8 @@
             $password = "b3092936";
             $dbname = "acsm_9ab42719d04fd9b";
 
-            $StartDate = (isset($_POST['Start Date'])    ? $_POST['Start Date']   : '');
-            $EndDate = (isset($_POST['End Date'])    ? $_POST['End Date']   : '');
+            $StartDate = Date("Y-m-d",(isset($_POST['Start Date'])    ? $_POST['Start Date']   : ''));
+            $EndDate = Date("Y-m-d",(isset($_POST['End Date'])    ? $_POST['End Date']   : ''));
             $UserID = (isset($_POST['ID'])    ? $_POST['ID']   : '');
 
             // Create connection
@@ -44,7 +44,7 @@
             die("Connection failed: " . mysqli_connect_error());
             }
 
-            $sql= "SELECT Notes.Text, Notes.Date, AdditionalData.Value FROM Notes Left Join AdditionalData on Notes.User = AdditionalData.userid WHERE $StartDate <= Notes.Date and Notes.Date <= $EndDate";
+            $sql= "SELECT Notes.Text, Notes.Date, AdditionalData.Value FROM Notes Left Join AdditionalData on Notes.User = AdditionalData.userid WHERE $StartDate <= DATE(Notes.Date) and DATE(Notes.Date) <= $EndDate";
             $result = mysqli_query($conn, $sql);
 
             if (mysqli_num_rows($result) > 0) {
