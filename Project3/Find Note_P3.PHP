@@ -44,7 +44,7 @@
             die("Connection failed: " . mysqli_connect_error());
             }
 
-            $sql= "SELECT Notes.Text, Notes.Date, AdditionalData.Value FROM Notes Left Join AdditionalData on Notes.User = AdditionalData.userid WHERE $StartDate <= DATE(Notes.Date) and DATE(Notes.Date) <= $EndDate";
+            $sql= "SELECT Notes.Text, Notes.Date, AdditionalData.Value FROM Notes Left Join AdditionalData on Notes.User = AdditionalData.userid";
             $result = mysqli_query($conn, $sql);
 
             if (mysqli_num_rows($result) > 0) {
