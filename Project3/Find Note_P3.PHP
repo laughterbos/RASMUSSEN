@@ -33,8 +33,8 @@
             $password = "b3092936";
             $dbname = "acsm_9ab42719d04fd9b";
 
-            $StartDate = Date("Y-m-d",(isset($_POST['Start Date'])    ? $_POST['Start Date']   : ''));
-            $EndDate = Date("Y-m-d",(isset($_POST['End Date'])    ? $_POST['End Date']   : ''));
+            $StartDate = (isset($_POST['Start Date'])    ? $_POST['Start Date']   : '');
+            $EndDate = (isset($_POST['End Date'])    ? $_POST['End Date']   : '');
             $UserID = (isset($_POST['ID'])    ? $_POST['ID']   : '');
 
             // Create connection
