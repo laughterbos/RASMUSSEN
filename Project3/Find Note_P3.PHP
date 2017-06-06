@@ -41,7 +41,7 @@
             if (!$conn) {
             die("Connection failed: " . mysqli_connect_error());
             }
-            $sql= "SELECT * FROM `Notes` LEFT JOIN `additionaldata` on `Notes`.User = `additionaldata`.userid WHERE $StartDate <= `Notes`.Date and `Notes`.Date <= $EndDate and $UserID = `Notes`.User";
+            $sql= "SELECT * FROM `Notes` LEFT JOIN `additionaldata` on `Notes`.User = `additionaldata`.userid WHERE '$StartDate' <= `Notes`.Date and `Notes`.Date <= '$EndDate' and `Notes`.User" = '$UserID';
             $result = mysqli_query($conn, $sql);
             if (mysqli_num_rows($result) > 0) {
             // output data of each row
