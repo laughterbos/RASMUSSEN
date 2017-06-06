@@ -46,8 +46,8 @@
             if (mysqli_num_rows($result) > 0) {
             // output data of each row
             while($row = mysqli_fetch_assoc($result)) {
-            echo "<b>Date: " . $row["Date"]. "</b><br>";
-            echo "<b>Note: " . $row["Text"]. "</b><br>";
+            echo "<b>Date: " . $row['Date']. "</b><br>";
+            echo "<b>Note: " . $row['Text']. "</b><br>";
             }
             } else {
             echo "Sorry there are no matches! Please check your entry and try again.";
