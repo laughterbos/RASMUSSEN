@@ -32,14 +32,14 @@
             $username = "b13fe870529434";
             $password = "b3092936";
             $dbname = "acsm_9ab42719d04fd9b";
-            $UserID = (isset($_POST['User ID'])    ? $_POST['User ID']   : '');
+            $UserID = $_POST['User ID'];
             // Create connection
             $conn = mysqli_connect($servername, $username, $password, $dbname);
             // Check connection
             if (!$conn) {
                 die("Connection failed: " . mysqli_connect_error());
             }
-            $sql= "SELECT * FROM notes WHERE User = 1";
+            $sql= "SELECT * FROM notes WHERE User = $UserID";
             $result = mysqli_query($conn, $sql);
             if (mysqli_num_rows($result) > 0) {
             // output data of each row
