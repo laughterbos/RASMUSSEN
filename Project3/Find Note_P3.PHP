@@ -39,16 +39,16 @@
             if (!$conn) {
                 die("Connection failed: " . mysqli_connect_error());
             }
-            $sql= "SELECT * FROM notes WHERE User = $UserID";
+            $sql= "SELECT Notes.Text, additionalData.Value FROM notes left join additionalData on Notes.User = additionalData.id WHERE Notes.User = 1";
             $result = mysqli_query($conn, $sql);
             if (mysqli_num_rows($result) > 0) {
             // output data of each row
             while($row = mysqli_fetch_assoc($result)) {
                 echo "<b>Note: " . $row['Text']. "</b><br>";
+                echo "<b>Additional Data: " . $row['Value']. "</b><br>";
             }
             } else {
                 echo "Sorry there are no matches! Please check your entry and try again.";
-                printf("error: %s\n", mysqli_error($conn));
             }
             mysqli_close($conn);
             ?>
