@@ -39,7 +39,7 @@
             if (!$conn) {
                 die("Connection failed: " . mysqli_connect_error());
             }
-            $sql= "SELECT * FROM notes WHERE User = 1;"
+            $sql= "SELECT * FROM notes WHERE User = 1";
             $result = mysqli_query($conn, $sql);
             if (mysqli_num_rows($result) > 0) {
             // output data of each row
