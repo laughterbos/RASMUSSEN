@@ -27,6 +27,7 @@
 
         <div data-role="main" class="ui-content">
             <?php
+            
             $servername = "us-cdbr-azure-southcentral-f.cloudapp.net";
             $username = "b13fe870529434";
             $password = "b3092936";
@@ -36,17 +37,18 @@
             $conn = mysqli_connect($servername, $username, $password, $dbname);
             // Check connection
             if (!$conn) {
-            die("Connection failed: " . mysqli_connect_error());
+                die("Connection failed: " . mysqli_connect_error());
             }
             $sql= "SELECT Text FROM notes WHERE User = $UserID";
             $result = mysqli_query($conn, $sql);
-            if (mysqli_num_rows($result) >= 0) {
+            if (mysqli_num_rows($result) > 0) {
             // output data of each row
             while($row = mysqli_fetch_assoc($result)) {
-            echo "<b>Note: " . $row['Text']. "</b><br>";
+                echo "<b>Note: " . $row['Text']. "</b><br>";
             }
             } else {
-            echo "Sorry there are no matches! Please check your entry and try again.";
+                echo "Sorry there are no matches! Please check your entry and try again.";
+                printf("error: %s\n", mysqli_error($conn));
             }
             mysqli_close($conn);
             ?>
