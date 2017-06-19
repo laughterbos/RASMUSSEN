@@ -1,11 +1,16 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml"><head>    <meta charset="utf-8" />    <title>Write Every Day</title>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8" />
+<title>Write Every Day</title>
     <!-- Include meta tag to ensure proper rendering and touch zooming -->    <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Include jQuery Mobile stylesheets -->    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
     <!-- Include the jQuery library -->    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <!-- Include the jQuery Mobile library -->    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
     <script> var Notification = window.Notification || window.mozNotification || window.webkitNotification; Notification.requestPermission(function (permission) {  // console.log(permission); }); function show() {   var instance = new Notification(  "This is a test", {    body: "just checking!"}  );  instance.onclick = function () {   // Something to do  };  instance.onerror = function () {   // Something to do  };  instance.onshow = function () {   // Something to do  };  instance.onclose = function () {   // Something to do  }; }</script>
-</head><body>    <!--Front page-->    <div data-role="page" id="page1">
+</head>
+<body>
+<!--Front page-->    <div data-role="page" id="page1">
         <div data-role="header">            <h1>Welcome to writing every day</h1>        </div>                <div data-role="main" class="ui-content">            <a href="#page2" data-role="button">Create note</a>            <a href="#page3" data-role="button">Find note</a>        </div>
         <div data-role="footer">            <h1>Footer</h1>        </div>    </div>
     <!--Save note-->    <div data-role="page" id="page2">
@@ -21,4 +26,6 @@
             <!-- Find old notes -->            To view previous notes, please use this search form            <form method="post" action="Find Note_P3.PHP">
                 <label for="User ID">User ID</label>                <input id="User ID" name="User ID" type="number" />
                 <input type="submit" value="Find previous notes" />            </form>        </div>
-        <div data-role="footer">            <h1>Footer</h1>        </div>    </div></body></html>
+        <div data-role="footer">            <h1>Footer</h1>        </div>    </div>
+        </body>
+        </html>
