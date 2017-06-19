@@ -7,7 +7,14 @@
     <!-- Include jQuery Mobile stylesheets -->    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
     <!-- Include the jQuery library -->    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <!-- Include the jQuery Mobile library -->    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-    <script> var Notification = window.Notification || window.mozNotification || window.webkitNotification; Notification.requestPermission(function (permission) {  // console.log(permission); }); function show() {   var instance = new Notification(  "This is a test", {    body: "just checking!"}  );  instance.onclick = function () {   // Something to do  };  instance.onerror = function () {   // Something to do  };  instance.onshow = function () {   // Something to do  };  instance.onclose = function () {   // Something to do  }; }</script>
+    <script> var Notification = window.Notification || window.mozNotification || window.webkitNotification; Notification.requestPermission(function (permission) {  // console.log(permission); });
+        function show() {
+            var instance = new Notification(  "This is a test", {    body: "just checking!"}  );
+            instance.onclick = function () {   // Something to do  };
+            instance.onerror = function () {   // Something to do  };
+            instance.onshow = function () {   // Something to do  };
+            instance.onclose = function () {   // Something to do  }; }
+    </script>
 </head>
 <body>
 <!--Front page-->    <div data-role="page" id="page1">
