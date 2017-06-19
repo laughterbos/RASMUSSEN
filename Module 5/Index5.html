@@ -13,16 +13,26 @@
     <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
     
     <!--Add notifications-->
-    <script> var Notification = window.Notification || window.mozNotification || window.webkitNotification;
+    <script>
+        var Notification = window.Notification || window.mozNotification || window.webkitNotification;
         Notification.requestPermission(function (permission) {
             // console.log(permission);
         });
         function show() {
-            var instance = new Notification(  "This is a test", {    body: "just checking!"}  );
-            instance.onclick = function () {   // Something to do  };
-            instance.onerror = function () {   // Something to do  };
-            instance.onshow = function () {   // Something to do  };
-            instance.onclose = function () {   // Something to do  }; }
+            var instance = new Notification("This is a test", {    body: "just checking!"}  );
+            instance.onclick = function () {
+                // Something to do
+            };
+            instance.onerror = function () {
+                // Something to do
+            };
+            instance.onshow = function () {
+                // Something to do
+            };
+            instance.onclose = function () {
+                // Something to do
+            };
+        }
     </script>
 </head>
 <body>
